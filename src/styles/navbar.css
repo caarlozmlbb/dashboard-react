@@ -17,3 +17,20 @@
     border: none;
   }
   
+.nav-link.active {
+  background-color: #007bff; /* Azul */
+  color: white;
+}
+
+/* Estilo para los submenús */
+.dropdown-menu {
+  display: none;
+  padding-left: 20px;
+}
+
+/* Cuando el menú desplegable está activo */
+.sidebar .dropdown-menu {
+  display: block;
+}
+
+  

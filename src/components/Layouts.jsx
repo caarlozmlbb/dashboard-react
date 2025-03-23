@@ -46,6 +46,7 @@ function Layout() {
     { icon: <FaHome />, title: "Inicio", link: "/inicio" },
     { icon: <FaChartLine />, title: "Dashboard", link: "/dashboard" },
     { icon: <FaFolder />, title: "Proyectos", link: "/proyectos" },
+    { icon: <FaFolder />, title: "Usuarios", link: "/usuarios" },
     { icon: <FaCalendarAlt />, title: "Modelo", link: "/repre" },
     { icon: <FaUser />, title: "Perfil", link: "/perfil" },
     { icon: <FaCog />, title: "Configuración", link: "/configuracion" },
@@ -57,17 +58,19 @@ function Layout() {
       <div className={`sidebar ${sidebarOpen ? "open" : "closed"}`}>
         <div className="p-3">
           <h4 className="text-center py-3 border-bottom mb-4">
-            <span className="text-primary">M</span>inible
+            <img
+              src="/src/images/logos/unicheck.png"
+              alt="Logo"
+              className="me-2"
+              style={{ width: "200px"}}
+            />
           </h4>
           <Nav className="flex-column">
             {MenuItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.link}
-                className="nav-link"
-              >
+              <Link key={index} to={item.link} className="nav-link">
                 <span className="me-3">{item.icon}</span>
-                {sidebarOpen && item.title} {/* Muestra el texto solo si el Sidebar está abierto */}
+                {sidebarOpen && item.title}{" "}
+                {/* Muestra el texto solo si el Sidebar está abierto */}
               </Link>
             ))}
           </Nav>
@@ -75,7 +78,8 @@ function Layout() {
         <div className="mt-auto p-3 border-top">
           <Link to="/logout" className="text-white d-flex align-items-center">
             <FaSignOutAlt className="me-3" />
-            {sidebarOpen && "Cerrar sesión"} {/* Muestra el texto solo si el Sidebar está abierto */}
+            {sidebarOpen && "Cerrar sesión"}{" "}
+            {/* Muestra el texto solo si el Sidebar está abierto */}
           </Link>
         </div>
       </div>
@@ -83,8 +87,8 @@ function Layout() {
       {/* Main content */}
       <div className={`content-wrapper ${sidebarOpen ? "" : "closed"}`}>
         {/* Navbar */}
-        <NavBar setSidebarOpen={setSidebarOpen} /> {/* Pasa la función setSidebarOpen */}
-
+        <NavBar setSidebarOpen={setSidebarOpen} />{" "}
+        {/* Pasa la función setSidebarOpen */}
         {/* Contenido dinámico */}
         <div className="page-content">
           <Outlet /> {/* Aquí se renderizará el contenido de la ruta */}
@@ -95,10 +99,6 @@ function Layout() {
 }
 
 export default Layout;
-
-
-
-
 
 // import React, { useState } from "react";
 // import { Outlet, Link } from "react-router-dom";

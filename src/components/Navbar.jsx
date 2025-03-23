@@ -62,7 +62,7 @@ function NavBar({ setSidebarOpen }) { // Recibe setSidebarOpen como prop
           <Dropdown align="end">
             <Dropdown.Toggle variant="light" className="border-0 d-flex align-items-center">
               <img
-                src="https://via.placeholder.com/36"
+                src="/src/images/user.png"
                 alt="User"
                 className="rounded-circle me-2"
                 width="36"
